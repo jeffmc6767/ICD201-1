@@ -62,6 +62,9 @@ while inPlay:
 
     ballX += speedX
     ballY += speedY
+
+    if score1 == 7 or score2 == 7:
+        inPlay = False
     
     if ballY - BALL_RADIUS <= TOP:
         ballY = TOP + BALL_RADIUS  
