@@ -68,12 +68,12 @@ backround = pygame.transform.scale(backround, (WIDTH, HEIGHT))
 inPlay = True
 game_state = "PLAYING"
 while inPlay:
+    pygame.event.get()
     keys = pygame.key.get_pressed()
     if keys[pygame.K_ESCAPE]:   
         inPlay = False
 # Score set status
     if score1 == 7 or score2 == 7:
-        print("Game over")
         game_state = "GAME_OVER"
 
 # If playing
@@ -110,16 +110,16 @@ while inPlay:
         if (ballX - BALL_RADIUS <= paddle1X + PADDLE_WIDTH and 
             ballX >= paddle1X and 
             paddle1Y <= ballY <= paddle1Y + PADDLE_HEIGHT):
-            speedX = -speedX * 1.05
-            speedY = speedY * 1.05
+            speedX = -speedX * 1.55
+            speedY = speedY * 1.55
             gulp.play()
 
 
         if (ballX + BALL_RADIUS >= paddle2X and 
             ballX <= paddle2X + PADDLE_WIDTH and 
             paddle2Y <= ballY <= paddle2Y + PADDLE_HEIGHT):
-            speedX = -speedX * 1.05
-            speedY = speedY * 1.05
+            speedX = -speedX * 1.55
+            speedY = speedY * 1.55
             gulp.play()
 
 # Ball reset location
@@ -164,7 +164,8 @@ while inPlay:
             gameWindow.blit(overText, (WIDTH // 2 - 120, 150))
             gameWindow.blit(creditText, (WIDTH // 2 - 250, 250))
             gameWindow.blit(restartText, (WIDTH // 2 - 150, 350))
-
+            if keys[pygame.K_ESCAPE]:   
+                inPlay = False
             pygame.display.update()
             clock.tick(60)
     
