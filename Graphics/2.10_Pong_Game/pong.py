@@ -110,16 +110,16 @@ while inPlay:
         if (ballX - BALL_RADIUS <= paddle1X + PADDLE_WIDTH and 
             ballX >= paddle1X and 
             paddle1Y <= ballY <= paddle1Y + PADDLE_HEIGHT):
-            speedX = -speedX * 1.55
-            speedY = speedY * 1.55
+            speedX = -speedX * 1.15
+            speedY = speedY * 1.15
             gulp.play()
 
 
         if (ballX + BALL_RADIUS >= paddle2X and 
             ballX <= paddle2X + PADDLE_WIDTH and 
             paddle2Y <= ballY <= paddle2Y + PADDLE_HEIGHT):
-            speedX = -speedX * 1.55
-            speedY = speedY * 1.55
+            speedX = -speedX * 1.15
+            speedY = speedY * 1.15
             gulp.play()
 
 # Ball reset location
